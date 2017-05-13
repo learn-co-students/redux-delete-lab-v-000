@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "enzyme": "^2.8.2",
     "jsdom": "^9.9.1",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.5.4",
     "react-scripts": "0.8.5",
+    "react-test-renderer": "^15.5.4",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
