@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import Band  from './Band';
 
 class Bands extends Component {
   render() {
+    const bands = this.props.store.getState().bands.map((el, i) => {
+      return <Band key={i} band={el} store={this.props.store} />
+    });
     return(
       <ul>
-        Bands Component
+        {bands}
       </ul>
     );
   }
