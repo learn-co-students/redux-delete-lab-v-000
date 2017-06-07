@@ -9,7 +9,6 @@ class Band extends Component {
   }
 
   render() {
-    debugger
     return(
       <li>
         {this.props.band.text}
