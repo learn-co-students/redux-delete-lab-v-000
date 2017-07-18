@@ -12,7 +12,7 @@ class Band extends Component {
   render() {
     return(
       <div>
-        <li key={this.props.band.id} >{this.props.band.band}
+        <li key={this.props.band.id} >{this.props.band.text}
         <button onClick={this.handleOnClick} /></li>
       </div>
     );
