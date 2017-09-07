@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 class Band extends Component {
   render() {
     return(
-      <div>
-        band component
-      </div>
+        <li>{this.props.band.text}</li>
     );
   }
 };
