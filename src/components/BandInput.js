@@ -20,7 +20,7 @@ class BandInput extends Component {
     this.props.store.dispatch({
       type: 'ADD_BAND', 
       band: {
-        text: this.state.text,
+        text: this.state.text,        
       },
     });
     this.setState({
