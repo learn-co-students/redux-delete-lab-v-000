@@ -3,22 +3,21 @@ import React, { Component } from 'react';
 class BandInput extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      text: '',
-    };
+      text: ''
+    }
   }
 
-  handleOnChange(event) {
+  handleChange(event) {
     this.setState({
-      text: event.target.value,
+      text: event.target.value
     });
   }
 
-  handleOnSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
     this.props.store.dispatch({
-      type: 'ADD_BAND', 
+      type: 'ADD_BAND',
       band: {
         text: this.state.text,
       },
@@ -29,10 +28,13 @@ class BandInput extends Component {
   }
 
   render() {
-    return (
+    return(
       <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input type="text" onChange={(event) => this.handleOnChange(event)} />
+        <form onSubmit={(event) => this.handleSubmit(event)}>
+          <p>
+            <label>add band</label><br></br>
+            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
+          </p>
           <input type="submit" />
         </form>
       </div>
