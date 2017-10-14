@@ -1,4 +1,4 @@
-let id = 0;
+let id = 0
 
 export default function manageBand(state = {
   bands: []
