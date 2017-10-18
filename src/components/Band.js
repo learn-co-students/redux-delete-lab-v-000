@@ -15,7 +15,7 @@ class Band extends Component {
       <div>
         <li>
           {this.props.band.text}
-          <button onClick={this.handleOnClick} />
+          <button onClick={this.handleOnClick} >Delete</button>
         </li>
       </div>
     );
