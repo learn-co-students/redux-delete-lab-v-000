@@ -4,7 +4,8 @@ class Band extends Component {
   
   handleOnClick = () => {
     this.props.store.dispatch({
-      type: 'DELETE_BAND'
+      type: 'DELETE_BAND',
+      id: this.props.id
     });
   }
 
@@ -13,8 +14,8 @@ class Band extends Component {
     return(
       <div>
         <li>
-          {this.props.text}
-          <button onClick={this.handleOnClick} />
+          {this.props.band.text}
+          <button onClick={this.handleOnClick} >Delete</button>
         </li>
       </div>
     );
