@@ -17,4 +17,4 @@ function render() {
 // because need to stub it out in tests.
 export const renderer = { render: render };
 
-store.dispatch({ type: 'buddy' });
+store.dispatch({ type: '@@INIT' });
