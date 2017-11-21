@@ -5,7 +5,7 @@ class BandInput extends Component {
     super(props);
 
     this.state = {
-      text: '',
+      text: 'default text...',
     };
   }
 
