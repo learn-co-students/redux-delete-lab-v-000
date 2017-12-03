@@ -3,11 +3,24 @@ import Band from './Band';
 
 class Bands extends Component {
   render() {
+
+    return (
+      <ul>
+        {this.props.store.getState().bands.map(band => {
+           return <Band band={band} store={this.props.store} />
+        });}
+      </ul>
+    )
+
+    /*const bands = this.props.store.getState().bands.map((band, index) => {
+      return <Band band={band} store={this.props.store} />
+    });
+
     return(
       <ul>
-        this.props.store.getState().bands.map((band)=> <Band name={band.name} store={this.props.store}/>)
+        {bands}
       </ul>
-    );
+    ); */
   }
 };
 
