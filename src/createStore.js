@@ -1,3 +1,4 @@
+
 import { renderer } from './index.js';
 
 export default function createStore(reducer) {
