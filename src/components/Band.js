@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
 class Band extends Component {
-  render() {
+	handleDelete = () => {
+		this.props.store.dispatch({type: 'DELETE_BAND', id: this.props.band.id})
+  }
+
+  render() {  	
     return(
-      <div>
-        band component
-      </div>
+      <li>
+				{this.props.band.text}
+				<button onClick={this.handleDelete}>Delete</button>
+      </li>
     );
   }
 };
