@@ -4,22 +4,20 @@ class Band extends Component {
 
   handleOnClick = () => {
       this.props.store.dispatch({
-        type:'DELETE_BAND',
-        id: this.props.id
+        type: 'DELETE_BAND',
+        id: this.props.band.id
       })
   }
 
   render() {
     return(
-        <li>
-          {this.props.text}
+      <div>
+        <li>{this.props.band.text}</li>
           <button onClick={this.handleOnClick} />
-        </li>
+      </div>
     );
   }
 };
 
-Band.defaultProps = {
-  band:''
-}
+
 export default Band;
