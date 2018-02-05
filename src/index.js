@@ -15,6 +15,11 @@ function render() {
 
 // not directly exporting the render function
 // because need to stub it out in tests.
+
 export const renderer = { render: render };
 
 store.dispatch({ type: 'buddy' });
+//
+// export const renderer = { render };
+//
+// store.dispatch({ type: '@@init' });

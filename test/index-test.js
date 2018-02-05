@@ -16,7 +16,7 @@ describe('Bands Component', () => {
     sinon.stub(store, 'getState').returns({
       bands: [
         { id: 1, text: 'hello' },
-        { id: 2, text: 'goodbye' }, 
+        { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
       ]
     });
@@ -64,7 +64,7 @@ describe('Band Component with Redux', () => {
     sinon.stub(store, 'getState').returns({
       bands: [
         { id: 1, text: 'hello' },
-        { id: 2, text: 'goodbye' }, 
+        { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
       ]
     });
@@ -89,6 +89,7 @@ describe('Band Component with Redux', () => {
     let deleteButton = wrapper.find('button').first();
     let stub = sinon.stub(store, "dispatch");
     deleteButton.simulate('click',  { preventDefault() {} });
+    
     expect(stub.calledWith(sinon.match({ type: 'DELETE_BAND', id: 1 }))).to.equal(true);
   });
 
