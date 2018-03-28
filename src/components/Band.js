@@ -13,8 +13,7 @@ class Band extends Component {
     return(
       <div>
         <li>
-          {this.props.band.text}
-          <button onClick={() => this.handleDelete()} />
+          {this.props.band.text} <button onClick={() => this.handleDelete()}>Delete</button>
         </li>
       </div>
     );
