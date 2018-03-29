@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Bands extends Component {
   render() {
-    return(
+    return (
       <ul>
         Bands Component
       </ul>
