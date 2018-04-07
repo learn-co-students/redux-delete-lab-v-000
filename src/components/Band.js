@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Band extends Component {
-  render() {
-    return(
-      <div>
-        band component
-      </div>
-    );
+  handleOnClick = () => {
+    this.props.store.dispatch({
+      type: 'DELETE_BAND',
+      id: this.props.band.id
+    })
   }
-};
 
-export default Band;
+  render () {
+    return (
+      <li>
+        {this.props.band.text}
+        <button onClick={this.handleOnClick} />
+      </li>
+    )
+  }
+}
+
+export default Band
