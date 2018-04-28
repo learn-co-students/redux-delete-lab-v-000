@@ -16,7 +16,7 @@ describe('Bands Component', () => {
     sinon.stub(store, 'getState').returns({
       bands: [
         { id: 1, text: 'hello' },
-        { id: 2, text: 'goodbye' }, 
+        { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
       ]
     });
@@ -64,7 +64,7 @@ describe('Band Component with Redux', () => {
     sinon.stub(store, 'getState').returns({
       bands: [
         { id: 1, text: 'hello' },
-        { id: 2, text: 'goodbye' }, 
+        { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
       ]
     });
