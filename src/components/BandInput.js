@@ -26,7 +26,6 @@ class BandInput extends Component {
     this.setState({
       text: '',
     });
-    debugger;
   }
 
   render() {
