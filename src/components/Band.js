@@ -5,6 +5,7 @@ class Band extends Component {
     return(
       <div>
         band component
+        <li key={this.props.band.id}>{this.props.band.text}</li>
       </div>
     );
   }
