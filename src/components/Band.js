@@ -5,15 +5,15 @@ class Band extends Component {
   handleOnClick = () => {
     this.props.store.dispatch({
       type: 'DELETE_BAND',
-      id: this.props.id
+      id: this.props.band.id
     });
   }
   render() {
     return(
       <div>
         <li>
-        {this.props.text}
-        <button onClick={this.handleOnClick}>Delete?</button>
+        {this.props.band.text}
+        <button onClick={this.handleOnClick}/>
         </li>
       </div>
     );
