@@ -6,7 +6,7 @@ class Band extends Component {
     console.log(this)
     this.props.store.dispatch({
       type: 'DELETE_BAND',
-      id: this.props.id,
+      id: this.props.band.id,
     });
   }
 
