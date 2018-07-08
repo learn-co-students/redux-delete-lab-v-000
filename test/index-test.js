@@ -105,6 +105,7 @@ describe('Band Component with Redux', () => {
     const BandComponent = shallow(<Band store={store} band={band} />);
     let deleteButton = BandComponent.find('button').first();
     deleteButton.simulate('click', { preventDefault() {} });
+    console.log(store.getState().bands);
     expect(store.getState().bands.length).to.equal(1);
     expect(store.getState().bands[0].text).to.equal('Hello');
   });
