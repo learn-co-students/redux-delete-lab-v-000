@@ -21,6 +21,7 @@ class BandInput extends Component {
       type: 'ADD_BAND', 
       band: {
         text: this.state.text,
+        id: this.state.id,
       },
     });
     this.setState({
@@ -30,12 +31,16 @@ class BandInput extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <input type="text" onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
-        </form>
-      </div>
+      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+      <p>
+      <label> label </label>
+      <input type="text"
+      value={this.state.text}
+      onChange={(event) => this.handleOnChange(event)}
+       />
+     </p>
+     <input type="submit"  />
+</form>
     );
   }
 };
