@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { App } from './App';
+import createStore from './createStore';
+import manageBand from './reducers/manageBand';
 
-import App from './App';
-import manageBand from './reducers/manageBand'
+const store = createStore(manageBand);
 
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+function render() {
+  ReactDOM.render(
+    <App store={store} />,
+    document.getElementById('root')
+  );
+};
 
-const store = createStore(manageBand)
+// not directly exporting the render function
+// because need to stub it out in tests.
+export const renderer = { render: render };
 
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-document.getElementById('root')
-)
+store.dispatch({ type: 'buddy' });
