@@ -16,3 +16,6 @@ ReactDOM.render(
   </Provider>,
 document.getElementById('root')
 )
+
+
+//store.dispatch({ type: '@@INIT' });
