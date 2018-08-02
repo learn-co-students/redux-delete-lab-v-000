@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Band extends Component {
 
   handleOnClick = () => {
-    this.props.deleteBand(this.props.id)
+    this.props.dispatch({type: "DELETE_BAND", id: this.props.id})
   }
 
   render() {
