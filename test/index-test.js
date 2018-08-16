@@ -87,8 +87,10 @@ describe('Redux', () => {
 
     let bandNames = store.getState().bands.map(band => band.name)
 
-    expect(store.getState().bands.length).to.equal(2)
+    console.log(store.getState())
+
     expect(bandNames).to.not.include("Devo")
+    expect(store.getState().bands.length).to.equal(2)
   })
 });
 
