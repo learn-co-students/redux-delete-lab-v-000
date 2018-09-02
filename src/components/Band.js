@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 class Band extends Component {
 
   handleOnClick = () => {
-    this.props.deleteBand(this.props.id)
+    this.props.removeBand(this.props.band.id)
   }
 
   render() {
     return(
       <div>
-        <li>{this.props.name}</li>
+        <li>{this.props.band.name}</li>
         <button onClick={this.handleOnClick}>
           Delete
         </button>
