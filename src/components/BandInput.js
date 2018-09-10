@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 class BandInput extends Component {
 
-  state = {
-    bandName: ''
+  constructor() {
+    super();
+    this.state = {
+      bandName: '',
+      id: 0,
+    }
   }
 
   handleOnChange(event) {
