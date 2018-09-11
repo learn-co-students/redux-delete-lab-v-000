@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class BandInput extends Component {
 
   state = {
-    bandName: ''
+    bandName: '',
+
   }
 
   handleOnChange(event) {
