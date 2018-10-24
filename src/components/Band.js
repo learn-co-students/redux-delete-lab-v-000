@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 
 class Band extends Component {
+  renderBand = () => {
+    return this.props.bands.map(b => {
+      return (
+        <li>{b}</li>
+      )
+    })
+  }
 
   render() {
-    return(
+    return (
       <div>
-        Band Component
+        <ol>
+        {this.renderBand()}
+        </ol>
       </div>
-    );
+    )
   }
+
 };
 
 export default Band;
