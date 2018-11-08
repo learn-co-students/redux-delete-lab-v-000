@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
-class Band extends Component {
+const Band = (props) => {
 
-  render() {
-    return(
-      <div>
-        Band Component
-      </div>
-    );
-  }
-};
+    return (
+        <div>
+            <li>{props.bandName}</li>
+            <button onClick={() => props.delete(props.id)}> DELETE </button>
+        </div>
+    )
+}
 
-export default Band;
+const mapDispatchToProps = dispatch => ({
+  delete: formData => dispatch({type: 'DELETE_BAND', id: formData})
+})
+
+
+export default connect(null, mapDispatchToProps)(Band);
