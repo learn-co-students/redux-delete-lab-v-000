@@ -36,3 +36,10 @@ class BandInput extends Component {
 };
 
 export default BandInput;
+
+// another solution
+// const mapDispatchToProps = dispatch => ({
+//   addBand: formData => dispatch({ type: 'ADD_BAND', payload: formData })
+// })
+
+//export default connect(null, mapDispatchToProps)(BandInput);
