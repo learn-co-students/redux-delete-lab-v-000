@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 const store = createStore(manageBand)
-
+store.subscribe(()=>{console.log("store change", store.getState())})
 
 ReactDOM.render(
   <Provider store={store}>
