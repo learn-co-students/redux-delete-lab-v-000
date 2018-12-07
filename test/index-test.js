@@ -73,12 +73,12 @@ describe('Redux', () => {
 
   it('removes the correct band from the store on dispatch', () => {
     const store = createStore(manageBand);
-    store.dispatch({type: 'ADD_BAND', name: 'Radiohead'})
-    store.dispatch({type: 'ADD_BAND', name: 'Devo'})
-    store.dispatch({type: 'ADD_BAND', name: 'Talking Heads'})
+    store.dispatch({type: 'ADD_BAND', payload: 'Radiohead'})
+    store.dispatch({type: 'ADD_BAND', payload: 'Devo'})
+    store.dispatch({type: 'ADD_BAND', payload: 'Talking Heads'})
 
     expect(store.getState().bands.length).to.equal(3)
-
+    console.log('prestate', store)
 
     let ids = store.getState()
       .bands.map(band => band.id)
@@ -86,7 +86,10 @@ describe('Redux', () => {
     store.dispatch({type: 'DELETE_BAND', id: ids[1]})
 
     let bandNames = store.getState().bands.map(band => band.name)
-
+    console.log('da bands',store.getState().bands)
+    console.log('ids', ids)
+    console.log('bandNames', bandNames)
+    console.log('bands', store.getState().bands)
     expect(store.getState().bands.length).to.equal(2)
     expect(bandNames).to.not.include("Devo")
   })
