@@ -24,6 +24,7 @@ class BandInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
+          <label>Band Name: </label>
           <input
             type="text"
             value={this.state.text}
