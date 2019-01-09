@@ -5,9 +5,10 @@ import App from './App';
 import manageBand from './reducers/manageBand'
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger'
 
-const store = createStore(manageBand)
+const store = createStore(manageBand, applyMiddleware(logger))
 
 
 ReactDOM.render(
