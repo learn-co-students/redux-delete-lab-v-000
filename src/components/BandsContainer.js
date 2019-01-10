@@ -23,9 +23,10 @@ const mapStateToProps = state => {
   }
 }
 
+
 const mapDispatchToProps = dispatch => ({
-  addBand: formData => dispatch({ type: 'ADD_BAND', payload: formData}),
-  deleteBand: formData => dispatch({type: 'DELETE_BAND', payload: formData})
+  addBand: formData => dispatch({ type: 'ADD_BAND', name: formData.name}),
+  deleteBand: formData => dispatch({type: 'DELETE_BAND', id: formData})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
