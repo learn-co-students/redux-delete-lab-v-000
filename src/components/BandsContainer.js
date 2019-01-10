@@ -5,7 +5,7 @@ import BandInput from '../components/BandInput'
 
 class BandsContainer extends Component {
   renderBands = () => {
-    return this.props.bands.map(band => <Band deleteBand={this.props.deleteBand} key={band.id} band={band} />)
+    return this.props.bands.map(band => <Band deleteBand={this.props.deleteBand} key ={band.id} band={band} />)
   }
   render() {
     return(
