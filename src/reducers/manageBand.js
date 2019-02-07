@@ -4,7 +4,16 @@ export default function manageBand(state = {
   switch (action.type) {
     case 'ADD_BAND':
 
-      return { ...state, bands: [...state.bands, action.name] }
+    	const band = {
+    		name: action.payload,
+    		id: Math.random()*100000000000
+    	}
+
+      return { bands: state.bands.concat(band) }
+
+    case 'DELETE_BAND':
+
+    	return { bands: state.bands.filter(band => band.id !== action.id)}
 
     default:
       return state;
