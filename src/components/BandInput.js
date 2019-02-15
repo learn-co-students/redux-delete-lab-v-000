@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+
 
 class BandInput extends Component {
 
   state = {
+    id: 0,
     bandName: ''
   }
 
   handleOnChange(event) {
     this.setState({
+      id: this.state.id + 1,
       bandName: event.target.value,
     });
   }
@@ -27,7 +31,7 @@ class BandInput extends Component {
           <input
             type="text"
             value={this.state.text}
-            onChange={(event) => this.handleOnChange(event)} />
+            onChange={(event) => this.handleOnChange(event)} value={this.state.text}/>
           <input type="submit" />
         </form>
       </div>
@@ -36,3 +40,4 @@ class BandInput extends Component {
 };
 
 export default BandInput;
+
