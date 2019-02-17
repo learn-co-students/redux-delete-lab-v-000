@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 class Band extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleClick = () => {
     this.props.deleteBand(this.props.id);
   };
