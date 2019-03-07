@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class BandInput extends Component {
-
+  id = uuid()
   state = {
-    bandName: ''
+    name: ""
   }
+  
+  baseState = this.state;
 
-  handleOnChange(event) {
+  handleOnChange = event => {
     this.setState({
-      bandName: event.target.value,
+      name: event.target.value,
     });
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addBand(this.state.bandName);
-    this.setState({
-      bandName: '',
-    });
+
+    this.props.addBand(this.state);
+    this.setState(this.baseState);
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form onSubmit={this.handleOnSubmit}>
           <input
             type="text"
-            value={this.state.text}
-            onChange={(event) => this.handleOnChange(event)} />
+            value={this.state.name}
+            onChange={this.handleOnChange} />
           <input type="submit" />
         </form>
       </div>
