@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 
-class Band extends Component {
+//class Band extends Component {
+//
+  const Band = props => {
 
-    bands = () => this.props.bands.map((band, index) => {
-      return <li key={index}>{band}</li>;
-    });
-  <span>{band}</span><button onClick={() => props.delete(props.text)}>DELETE</button>
-
-  render() {
     return(
       <div>
-      {this.bands()}
+      <li>{props.band.name}</li><button onClick={() => props.delete(props.band.id)}>DELETE</button>
       </div>
     );
   }
-};
+
 
 
 export default Band;
