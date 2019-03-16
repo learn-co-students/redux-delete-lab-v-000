@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class BandInput extends Component {
 
@@ -6,33 +6,34 @@ class BandInput extends Component {
     bandName: ''
   }
 
-  handleOnChange(event) {
+  handleOnChange = event => {
     this.setState({
       bandName: event.target.value,
-    });
+    })
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addBand(this.state.bandName);
+    this.props.addBand(this.state.bandName)
     this.setState({
       bandName: '',
-    });
+    })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form onSubmit={this.handleOnSubmit}>
+          <label>Add band name: </label>
           <input
             type="text"
-            value={this.state.text}
-            onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
+            value={this.state.bandName}
+            onChange={this.handleOnChange} />
+          <label> </label><input type="submit" />
         </form>
       </div>
-    );
+    )
   }
-};
+}
 
-export default BandInput;
+export default BandInput
