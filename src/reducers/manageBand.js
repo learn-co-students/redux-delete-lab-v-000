@@ -2,7 +2,6 @@ export default function manageBand(state = {
   bands: []
 }, action) {
   console.log("first action": action)
-  debugger
   switch (action.type) {
     case 'ADD_BAND':
 
@@ -10,7 +9,6 @@ export default function manageBand(state = {
         id: Math.random()*100000000000,
         name: action.name   
       }
-debugger
       // return { ...state, band: [...state.band, action.payload] }
       return {bands: state.bands.concat(band)};
 
