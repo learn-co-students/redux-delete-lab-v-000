@@ -7,7 +7,7 @@ import manageBand from './reducers/manageBand'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-const store = createStore(manageBand)
+const store = createStore(manageBand);
 
 
 ReactDOM.render(
@@ -15,4 +15,4 @@ ReactDOM.render(
     <App />
   </Provider>,
 document.getElementById('root')
-)
+);
