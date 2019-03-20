@@ -1,7 +1,7 @@
 export default function manageBand(state = {
   bands: []
 }, action) {
-  console.log("first action": action)
+  
   switch (action.type) {
     case 'ADD_BAND':
 
@@ -13,7 +13,7 @@ export default function manageBand(state = {
       return {bands: state.bands.concat(band)};
 
     case 'DELETE_BAND':
-    console.log("delete action working?": action)
+   
      
        const bands = state.bands.filter(
           band => band.id !== action.id);
