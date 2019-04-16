@@ -86,7 +86,8 @@ describe('Redux', () => {
     store.dispatch({type: 'DELETE_BAND', id: ids[1]})
 
     let bandNames = store.getState().bands.map(band => band.name)
-
+    console.log(store.getState())
+    console.log('band names: ', bandNames)
     expect(store.getState().bands.length).to.equal(2)
     expect(bandNames).to.not.include("Devo")
   })
