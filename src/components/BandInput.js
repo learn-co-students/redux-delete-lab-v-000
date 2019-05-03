@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 class BandInput extends Component {
-
-  state = {
-    bandName: ''
-  }
+	state = {
+	  bandName: ''
+	}
 
   handleOnChange(event) {
     this.setState({
@@ -35,4 +34,4 @@ class BandInput extends Component {
   }
 };
 
-export default BandInput;
+export default BandInput
