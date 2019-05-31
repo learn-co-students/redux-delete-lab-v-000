@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import BandInput from './BandInput';
+import Bands from './Bands';
 
+import { addBand, removeBand } from '../actions/bands';
 import { connect } from 'react-redux'
 
 class BandsContainer extends Component {
@@ -8,7 +10,7 @@ class BandsContainer extends Component {
     return (
       <div>
         <BandInput addBand={this.props.addBand}/>
-
+        <Bands removeBand={this.props.removeBand} bands={this.props.bands} />
       </div>
     )
   }
@@ -16,8 +18,4 @@ class BandsContainer extends Component {
 
 const mapStateToProps = ({ bands }) => ({ bands })
 
-const mapDispatchToProps = dispatch => ({
-  addBand: name => dispatch({ type: "ADD_BAND", name })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
+export default connect(mapStateToProps, { addBand, removeBand })(BandsContainer)
