@@ -8,7 +8,7 @@ export default function manageBand(state = {
 		case 'DELETE_BAND':
 			const toDelete = state.bands.find(band => (action.band.id === band.id))
 			const idx = state.bands.indexOf(toDelete)
-			return { ...state, bands: [state.bands.slice(0, idx), state.bands.slice(idx+1)] }
+			return { ...state, bands: [...state.bands.slice(0, idx), ...state.bands.slice(idx+1)] }
     default:
       return state;
   }
