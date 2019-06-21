@@ -24,7 +24,7 @@ const mapStateToProps = ({ bands }) => ({ bands })
 
 const mapDispatchToProps = dispatch => ({
   addBand: band => dispatch({ type: "ADD_BAND", band }),
-  deleteBand: band => dispatch({ type: "DELETE_BAND", band })
+  deleteBand: band => dispatch({ type: "DELETE_BAND", id: band.id })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
