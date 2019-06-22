@@ -19,17 +19,18 @@ class BandsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("state", state)
+  // console.log("state", state)
   return ({
     bands: state.bands
   })
 }
 
+export default connect(mapStateToProps, { addBand, deleteBand })(BandsContainer)
+
+// This was provided in lab, decided to use bulkier sytanx
 // const mapStateToProps = ({ bands }) => ({ bands })
 
-// using action creator
+// using action creator instead of mapDispatchToProps
 // const mapDispatchToProps = dispatch => ({
 //   addBand: name => dispatch({ type: "ADD_BAND", name })
 // })
-
-export default connect(mapStateToProps, { addBand, deleteBand })(BandsContainer)

@@ -1,5 +1,5 @@
 export const addBand = name => {
-  console.log("action add band creator (name):",  name)
+  // console.log("action addBand (name):",  name)
   return {
     type: 'ADD_BAND',
     name
@@ -7,7 +7,7 @@ export const addBand = name => {
 }
 
 export const deleteBand = id => {
-  console.log("action DeleteBand (id)", id)
+  // console.log("action deleteBand (id)", id)
   return {
     type: 'DELETE_BAND',
     id

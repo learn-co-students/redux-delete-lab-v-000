@@ -5,21 +5,19 @@ export default function manageBand(state = {
 
     case 'ADD_BAND':
     // console.log("reducer add Band (action.name):", action.name)
-
-    const band = { id: Math.random(), name: action.name }
+      const band = { id: Math.random(), name: action.name }
 
     // console.log("add band reducer id (band.id):", band.id)
-      return  { bands: state.bands.concat(band) }
-
+        return  { bands: state.bands.concat(band) }
 
      case 'DELETE_BAND':
-     const bands = state.bands.filter(band => band.id !== action.id)
+      const bands = state.bands.filter(band => band.id !== action.id)
 
         // console.log("delete_reducer (bands length):", bands.length)
-      return {bands}
+        return {bands}
 
-    default:
-      return state;
+     default:
+        return state;
   }
 };
 
