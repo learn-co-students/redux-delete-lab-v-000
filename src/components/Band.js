@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Band extends Component {
+const Band = ({band, deleteBand }) =>
 
-  render() {
-    return(
-      <div>
-        Band Component
-      </div>
-    );
-  }
-};
+<div>
 
-export default Band;
+<li>  {band.name} </li>
+<button onClick={() => deleteBand(band.id)}> DELETE </button>
+< br/>
+
+</div>
+
+  export default Band;
