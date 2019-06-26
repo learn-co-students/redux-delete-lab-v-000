@@ -5,10 +5,13 @@ class Band extends Component {
   render() {
     return(
       <div>
-        Band Component
+      <li>{this.props.band.name}</li>
+      <button onClick={() => this.props.delete(this.props.band)}>DELETE</button>
       </div>
     );
   }
 };
+
+
 
 export default Band;
