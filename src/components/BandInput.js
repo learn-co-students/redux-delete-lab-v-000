@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class BandInput extends Component {
 
   state = {
-    bandName: ''
+    bandName: ''    
   }
 
   handleOnChange(event) {
@@ -23,6 +23,7 @@ class BandInput extends Component {
   render() {
     return (
       <div>
+        <h3>Enter Your Favorite Bands</h3>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input
             type="text"
