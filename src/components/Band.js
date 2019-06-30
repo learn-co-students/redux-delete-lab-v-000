@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-class Band extends Component {        //child of Bands I think. s/get props from Bands
+class Band extends Component {        //child of Bands. s/get props from Bands
                                         //will get band object w/a name & id & the deleteBand()
 
   handleOnClick = () => {
     this.props.deleteBand(this.props.id)
-  }
+  }                                      
 
-
+  
   render() {
     return(
       <div>
         <li>{this.props.name}</li>
-        <button onClick={this.handleOnClick}>Delete </button>
+        <button onClick={this.handleOnClick}>Delete</button>
       </div>
     );
   }

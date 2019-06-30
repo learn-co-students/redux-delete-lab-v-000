@@ -7,8 +7,8 @@ class BandsContainer extends Component {
   render() {
     return (
       <div>
-        <BandInput addBand={this.props.addBand}/>
-        <Bands bands={this.props.bands} deleteBand={this.props.deleteBand}/>
+        <BandInput addBand={this.props.addBand}/>                             {/*pass props to BandInput.  addBand*/}
+        <Bands bands={this.props.bands} deleteBand={this.props.deleteBand}/>  {/*pass props to Bands. bands & deleteBand*/}
 
       </div>
     )
@@ -19,8 +19,9 @@ class BandsContainer extends Component {
 const mapStateToProps = ({ bands }) => ({ bands })
 
 const mapDispatchToProps = dispatch => ({
-  addBand: name => dispatch({ type: "ADD_BAND", name }),
+  addBand: name => dispatch({ type: "ADD_BAND", name }),     //can also put these in separate action file
   deleteBand: id => dispatch({ type: 'DELETE_BAND', id })
+  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BandsContainer)
