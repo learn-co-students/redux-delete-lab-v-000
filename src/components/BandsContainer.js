@@ -6,7 +6,10 @@ import Band from './Band';
 
 class BandsContainer extends Component {
 	render() {
-		const renderBand = this.props.bands.map((band) => <Band key={band.id} bandName={band.bandName} />);
+		// debugger;
+		const renderBand = this.props.bands.map((band) => (
+			<Band deleteBand={this.props.deleteBand} band={band} key={band.id} bandName={band.bandName} />
+		));
 		return (
 			<div>
 				<BandInput addBand={this.props.addBand} />
@@ -20,6 +23,7 @@ const mapStateToProps = ({ bands }) => ({ bands });
 
 const mapDispatchToProps = (dispatch) => ({
 	addBand: (name) => dispatch({ type: 'ADD_BAND', name }),
+	// 	delete: (todoText) => dispatch({ type: 'DELETE_TODO', payload: todoText })
 	deleteBand: (id) => dispatch({ type: 'DELETE_BAND', id })
 });
 

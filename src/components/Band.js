@@ -2,9 +2,24 @@ import React, { Component } from 'react';
 
 class Band extends Component {
 	render() {
-		console.log('Band Component', this.props);
+		// debugger;
+		console.log('Band Component', this.props.bandName);
 
-		return <li>{this.props.name}</li>;
+		return (
+			<li>
+				{this.props.bandName}
+				<button
+					onClick={() => {
+						// debugger;
+						console.log('Band Component', this.props);
+						// _this2.props.delete is not a function
+						this.props.deleteBand(this.props.id);
+					}}
+				>
+					DELETE
+				</button>
+			</li>
+		);
 	}
 }
 
