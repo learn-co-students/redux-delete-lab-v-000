@@ -11,7 +11,7 @@ class Band extends Component {
 				<button
 					onClick={() => {
 						// debugger;
-						console.log('Band Component', this.props);
+
 						// _this2.props.delete is not a function
 						this.props.deleteBand(this.props.id);
 					}}
