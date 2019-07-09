@@ -10,7 +10,7 @@ export default function manageBand(
 		case 'ADD_BAND':
 			const band = {
 				id: Math.random() * 10000000000000000,
-				bandName: action.name
+				name: action.name
 			};
 			console.log('ADD_BAND:', band);
 			// debugger;
@@ -18,11 +18,10 @@ export default function manageBand(
 			return { bands: state.bands.concat(band) };
 
 		case 'DELETE_BAND':
+			const bands = state.bands.filter((band) => band.id !== action.id);
+			// debugger;
 			return {
-				bands: state.bands.filter((band) => {
-					// debugger;
-					band.id !== action.id;
-				})
+				bands
 			};
 
 		default:

@@ -8,7 +8,7 @@ class Band extends Component {
 	}
 
 	handleClick() {
-		debugger;
+		// debugger;
 		// this.props.deleteBand();
 		this.props.deleteBand(this.props.band.id);
 	}
