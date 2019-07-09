@@ -13,14 +13,14 @@ export default function manageBand(
 				bandName: action.name
 			};
 			console.log('ADD_BAND:', band);
-			debugger;
+			// debugger;
 			// return { ...state, bands: [ ...state.bands, action.name ] };
 			return { bands: state.bands.concat(band) };
 
 		case 'DELETE_BAND':
-			debugger;
 			return {
 				bands: state.bands.filter((band) => {
+					// debugger;
 					band.id !== action.id;
 				})
 			};
