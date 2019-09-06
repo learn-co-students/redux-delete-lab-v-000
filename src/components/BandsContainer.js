@@ -9,7 +9,9 @@ class BandsContainer extends Component {
     return (
       <div>
         <BandInput addBand={this.props.addBand} />
-        <Band bands={this.props.bands} />
+        <ul>
+          {this.props.bands.map((band, id) => <Band key={id} band={band} />)}
+        </ul>
       </div>
     )
   }

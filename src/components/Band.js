@@ -4,15 +4,11 @@ const Band = props => {
 
   console.log('in Band', props);
 
-  const band = props.bands.map((band, id) => {
-    return <li key={id}>{band.bandName}</li>;
-  });
-
   return (
     <div>
-      {band}
+      <li>{props.band.bandName}</li>
     </div>
-  );
+  )
 }
 
 
