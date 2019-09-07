@@ -41,7 +41,7 @@ describe('Band Component', () => {
     let form = wrapper.find('form')
 
     input.simulate('change', { target: { value: 'Gwar' } })
-    form.simulate('submit',  { preventDefault() {} })
+    form.simulate('submit', { preventDefault() { } })
 
     expect(wrapper.text()).to.contain('Gwar');
   });
@@ -57,9 +57,9 @@ describe('Redux', () => {
 
   it('assigns a unique id property when a band is added', () => {
     const store = createStore(manageBand);
-    store.dispatch({type: 'ADD_BAND', name: 'Radiohead'})
-    store.dispatch({type: 'ADD_BAND', name: 'Devo'})
-    store.dispatch({type: 'ADD_BAND', name: 'Talking Heads'})
+    store.dispatch({ type: 'ADD_BAND', name: 'Radiohead' })
+    store.dispatch({ type: 'ADD_BAND', name: 'Devo' })
+    store.dispatch({ type: 'ADD_BAND', name: 'Talking Heads' })
 
     let ids = store.getState()
       .bands.map(band => band.id)
@@ -73,9 +73,9 @@ describe('Redux', () => {
 
   it('removes the correct band from the store on dispatch', () => {
     const store = createStore(manageBand);
-    store.dispatch({type: 'ADD_BAND', name: 'Radiohead'})
-    store.dispatch({type: 'ADD_BAND', name: 'Devo'})
-    store.dispatch({type: 'ADD_BAND', name: 'Talking Heads'})
+    store.dispatch({ type: 'ADD_BAND', name: 'Radiohead' })
+    store.dispatch({ type: 'ADD_BAND', name: 'Devo' })
+    store.dispatch({ type: 'ADD_BAND', name: 'Talking Heads' })
 
     expect(store.getState().bands.length).to.equal(3)
 
@@ -83,7 +83,7 @@ describe('Redux', () => {
     let ids = store.getState()
       .bands.map(band => band.id)
 
-    store.dispatch({type: 'DELETE_BAND', id: ids[1]})
+    store.dispatch({ type: 'DELETE_BAND', id: ids[1] })
 
     let bandNames = store.getState().bands.map(band => band.name)
 
@@ -94,16 +94,16 @@ describe('Redux', () => {
 
 describe('Band Component with Redux', () => {
 
-  it('has a button that dispatches an DELETE_BAND action', ()=> {
+  it('has a button that dispatches an DELETE_BAND action', () => {
     const store = createStore(manageBand);
-    store.dispatch({type: 'ADD_BAND', name: 'Daft Punk'})
+    store.dispatch({ type: 'ADD_BAND', name: 'Daft Punk' })
 
     const wrapper = mount(<Provider store={store}><App /></Provider>);
 
     let deleteButton = wrapper.find('button').first();
 
     expect(store.getState().bands.length).to.equal(1)
-    deleteButton.simulate('click',  { preventDefault() {} });
+    deleteButton.simulate('click', { preventDefault() { } });
     expect(store.getState().bands.length).to.equal(0)
 
   });
@@ -117,18 +117,18 @@ describe('Band Component with Redux', () => {
     let input = wrapper.find('input').first();
 
     input.simulate('change', { target: { value: 'Shannon and the Clams' } });
-    form.simulate('submit',  { preventDefault() {} });
+    form.simulate('submit', { preventDefault() { } });
     input.simulate('change', { target: { value: 'Brian Eno' } });
-    form.simulate('submit',  { preventDefault() {} });
+    form.simulate('submit', { preventDefault() { } });
 
     expect(store.getState().bands.length).to.equal(2)
-    expect(store.getState().bands[0].name).to.equal('Shannon and the Clams')
-    expect(store.getState().bands[1].name).to.equal('Brian Eno')
+    expect(store.getState().bands[0].bandName).to.equal('Shannon and the Clams')
+    expect(store.getState().bands[1].bandName).to.equal('Brian Eno')
 
     let deleteButton = wrapper.find('button').first();
-    deleteButton.simulate('click', { preventDefault() {} });
+    deleteButton.simulate('click', { preventDefault() { } });
 
     expect(store.getState().bands.length).to.equal(1);
-    expect(store.getState().bands[0].name).to.equal('Brian Eno');
+    expect(store.getState().bands[0].bandName).to.equal('Brian Eno');
   });
 });
