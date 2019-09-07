@@ -10,15 +10,12 @@ export default function manageBand(state = {
         bandName: action.bandName
       }
       return { ...state, bands: [...state.bands, band] }
+    case 'DELETE_BAND':
+      console.log('manageBand Reducer in delete', action)
+
+      return { bands: state.bands.filter(band => band !== action.payload) }
 
     default:
       return state;
   }
 };
-// return { todos: state.todos.concat(action.payload.text) };
-
-// const todo = {
-//   id: Math.random()*10000000000000000,
-//   text: action.payload.text
-// }
-// return { todos: state.todos.concat(todo) };
