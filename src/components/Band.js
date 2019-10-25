@@ -5,23 +5,18 @@ class Band extends Component {
 
   render() {
 
-      let bands = this.props.bands.map(band => <li key={band.id}>{band.bandName}</li>);
-
+      let band = this.props.band;
     return(
       <div>
-        Band Component
-        <ul>
-          {bands}
-        </ul>
+        <li>{band.name}</li>
+        <button onClick={() => this.props.delete(this.props.band.id)}>DELETE</button>
       </div>
     );
   }
 };
 
-const mapStateToProps = state => {
-  return { bands: state.bands }
-};
 
-export default connect(
-  mapStateToProps
-)(Band);
+
+
+
+export default Band;
