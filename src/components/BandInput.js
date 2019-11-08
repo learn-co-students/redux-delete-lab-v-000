@@ -21,7 +21,7 @@ class BandInput extends Component {
       bandName: '',
     });
   }
-
+//  This is the forms.
   render() {
     return (
       <div>

@@ -8,7 +8,7 @@ import Band from './Band'
 class Bands extends Component {
 
   renderBands = () => {
-    // debugger
+    // pay attention to the IF statement here. iquick commom with redux..
     if (this.props.bands && this.props.bands.map) {
     return   this.props.bands.map(band => < Band delete={this.props.deleteBand} key={band.id} band={band} />)
     }
