@@ -9,7 +9,7 @@ import { Provider, connect } from 'react-redux'
 import manageBand from '../src/reducers/manageBand';
 import Band from '../src/components/Band'
 import App from '../src/App';
-import BandsContainer from '../src/components/BandsContainer';
+import Bands from '../src/components/Bands';
 
 import Adapter from 'enzyme-adapter-react-16'
 
