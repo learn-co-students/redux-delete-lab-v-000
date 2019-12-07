@@ -6,11 +6,17 @@ import Band from './Band';
 
 
 class BandsContainer extends Component {
+
+renderBands = () => {
+  return this.props.bands.map(band => <Band delete={this.props.delete} band={band} />)
+} 
   render() {
     return (
       <div>
         <ul>
-        	{this.props.bands.map((band) => <li>{band.name}</li>)}
+          	{console.log(this)}
+
+        	{this.renderBands()}
         </ul>
         <BandInput addBand={this.props.addBand}/>
       </div>
@@ -19,7 +25,11 @@ class BandsContainer extends Component {
 
 }
 
-const mapStateToProps = ({ bands }) => ({ bands })
+const mapStateToProps = state => {
+  return {
+    bands: state.bands
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
