@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+import { connect } from 'react-redux';
+import { addBand }from '../actions/bands';
+
 
 class BandInput extends Component {
 
@@ -14,7 +18,8 @@ class BandInput extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addBand(this.state.bandName);
+    const newBand = {...this.state, id: uuid() };
+    this.props.addBand(newBand);
     this.setState({
       bandName: '',
     });
@@ -35,4 +40,12 @@ class BandInput extends Component {
   }
 };
 
-export default BandInput;
+const mapDispatchToProps = dispatch => {
+  return {
+    addBand: (newBand) => {
+      dispatch(addBand(newBand))
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(BandInput);
