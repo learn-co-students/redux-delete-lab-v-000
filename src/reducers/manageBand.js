@@ -10,11 +10,11 @@ export default function manageBand(
         id: uuid(),
         name: action.name
       }
-      console.log(band)
+      console.log(JSON.stringify(band))
       return { bands: [...state.bands, band ] };
 
     case 'DELETE_BAND':
-  return {bands: state.bands.filter(band => band.id !== action.band.id)}
+  return {bands: state.bands.filter(band => band.id !== action.id)}
  
     default:
       return state;

@@ -5,9 +5,9 @@ export const addBand = name => {
   }; //creates a copy of the object 
 };
 
-export const deleteBand = bandId => {
+export const deleteBand = id => {
   return {
     type: 'DELETE_BAND',
-    bandId
+    id
   };
 };

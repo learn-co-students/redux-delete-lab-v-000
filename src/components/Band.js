@@ -5,7 +5,7 @@ const Band = props => {
     return(
       <div>
         Band Component
-        <li>{props.band.name}</li><button onClick={() => props.delete(props.band.id)}>DELETE_BAND</button>
+        <li key={props.band.id}>{props.band.name}</li><button onClick={() => props.delete(props.band.id)}>DELETE_BAND</button>
       </div>     
     );
   }
