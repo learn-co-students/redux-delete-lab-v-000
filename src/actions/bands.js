@@ -1,7 +1,7 @@
-export const addBand = band => {
+export const addBand = name => {
   return {
     type: 'ADD_BAND',
-	band
+	name
   }; //creates a copy of the object 
 };
 

@@ -6,10 +6,9 @@ export default function manageBand(
 	) {
   switch (action.type) {
     case 'ADD_BAND':
-    console.log(action)
       const band = {
         id: uuid(),
-        name: action.band.bandName
+        name: action.name
       }
       console.log(band)
       return { bands: [...state.bands, band ] };
