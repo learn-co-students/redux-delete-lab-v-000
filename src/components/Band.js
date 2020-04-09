@@ -1,14 +1,20 @@
+
 import React, { Component } from 'react';
 
 class Band extends Component {
 
-  render() {
-    return(
-      <div>
-        Band Component
-      </div>
-    );
+  handleOnClick = () => {
+  	this.props.deleteBand(this.props.band.id)
   }
-};
+
+  render() {
+  	return (
+  	  <div>
+  	    <li>{this.props.band.bandName}</li>
+  	    <button onClick={this.handleOnClick}>Delete Band</button>
+  	  </div>
+  	)
+  }
+}
 
 export default Band;
