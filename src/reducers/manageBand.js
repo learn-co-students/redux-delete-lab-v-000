@@ -14,7 +14,7 @@ export default function manageBand(state = {
 
       case 'DELETE_BAND':
       return { ...state,
-        bands: state.bands.filter(band => band.id !== action.payload)
+        bands: state.bands.filter(band => band.id !== action.id)
       }
 
     default:
