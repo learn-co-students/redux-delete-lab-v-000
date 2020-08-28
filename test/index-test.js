@@ -1,22 +1,19 @@
 import { expect } from 'chai';
 import React from 'react';
 import { configure, shallow, mount } from 'enzyme';
-import BandInput from '../src/components/BandInput';
 import sinon from 'sinon';
-import { renderer } from '../src/index';
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
 import manageBand from '../src/reducers/manageBand';
 import Band from '../src/components/Band'
 import App from '../src/App';
-import BandsContainer from '../src/components/BandsContainer';
 
 import Adapter from 'enzyme-adapter-react-16'
 
 configure({ adapter: new Adapter() })
 
 describe('Bands Component', () => {
-  it('displays bands from Redux store', () => {
+  it('renders the Band component for each band', () => {
     const store = createStore(manageBand)
     sinon.stub(store, 'getState').returns({
       bands: [
@@ -27,7 +24,7 @@ describe('Bands Component', () => {
     });
 
     const wrapper = mount(<Provider store={store}><App /></Provider>)
-    expect(wrapper.find('li')).to.have.length(3);
+    expect(wrapper.find(Band)).to.have.length(3);
   });
 });
 
@@ -94,7 +91,7 @@ describe('Redux', () => {
 
 describe('Band Component with Redux', () => {
 
-  it('has a button that dispatches an DELETE_BAND action', ()=> {
+  it('has a button that dispatches a DELETE_BAND action', ()=> {
     const store = createStore(manageBand);
     store.dispatch({type: 'ADD_BAND', name: 'Daft Punk'})
 
