@@ -2,7 +2,9 @@
 
 ## Objectives
 
-1. Implement a delete button for each band, such that the store is appropriately 
+1. Remove responsibility for rendering bands from the `BandsContainer` by 
+creating `Bands` and `Band` components.
+2. Implement a delete button for each band, such that the store is appropriately 
 updated.
 
 ## Overview
@@ -47,6 +49,6 @@ action of type `'DELETE_BAND'` and passes through that band's id as the
 `action.id`. This dispatched action should be provided as a prop from 
 `BandsContainer`.
 
-6. Finally, you will need to add code to handle the `DELETE_BAND` action in the
- reducer. When a band's delete button is pressed, it will return a new list of 
- bands that does not include the deleted band.
+6. Finally, you will need to add code to handle the `DELETE_BAND` action in the 
+reducer. When a band's delete button is pressed, it will return a new list of 
+bands that does not include the deleted band.
