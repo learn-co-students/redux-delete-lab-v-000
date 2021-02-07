@@ -12,13 +12,16 @@ class BandInput extends Component {
     });
   }
 
+
   handleOnSubmit(event) {
     event.preventDefault();
+    // console.log("this.props.addBand(this.state.bandName);", this.props.addBand(this.state.bandName))
     this.props.addBand(this.state.bandName);
     this.setState({
       bandName: '',
     });
   }
+
 
   render() {
     return (
