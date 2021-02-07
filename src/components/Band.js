@@ -2,6 +2,36 @@
 import React from 'react';
 
 
+
+
+const Band = props => {
+
+  function handleOnClick(){
+    console.log("handleOnClick")
+    console.log("props", props)
+
+    // props.deleteBand(props.id)
+    props.delete(props.id)
+
+  }
+
+
+
+  console.log("props2", props)
+
+  return (
+    <div>
+      <li>{props.band}</li><button onClick={() => handleOnClick()}>delete</button>
+    </div>
+  )
+}
+
+
+export default Band;
+
+
+
+
 // class Band extends Component {
 //
 //   render() {
@@ -13,14 +43,3 @@ import React from 'react';
 //     );
 //   }
 // };
-
-const Band = props => {
-  console.log("props", props)
-  return (
-    <div>
-      <li>{props.text}</li><button onClick={() => props.deleteBand(props.text)}>delete</button>
-    </div>
-  )
-}
-
-export default Band;
