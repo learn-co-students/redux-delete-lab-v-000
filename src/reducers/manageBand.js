@@ -1,8 +1,9 @@
 import uuid from 'uuid';
 
 export default function manageBand(state = {
+ 
   bands: []
-}, action) {
+       }, action) {
   switch (action.type) {
     
     case 'ADD_BAND':

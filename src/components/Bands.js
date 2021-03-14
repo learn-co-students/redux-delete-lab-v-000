@@ -24,6 +24,7 @@ class Bands extends Component {
 }
 
 const mapStateToProps = ({ bands }) => ({ bands })
+//  Bands is come from here because it in the store....  And it then used.
 
 const mapDispatchToProps = dispatch => ({
   addBand: name => dispatch({ type: "ADD_BAND", name }),
