@@ -3,9 +3,15 @@ import React, { Component } from 'react';
 class Band extends Component {
 
   render() {
+    console.log('this.props in Band:', this.props);
     return(
       <div>
-        Band Component
+       <li>
+         {this.props.text}
+       </li> 
+       <button>
+         DELETE
+       </button>
       </div>
     );
   }
