@@ -7,7 +7,7 @@ class Band extends Component {
     return(
       <div>
        <li>
-         {this.props.text}
+         {this.props.name}
        </li> 
        <button>
          DELETE
