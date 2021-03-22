@@ -20,9 +20,9 @@ describe('Bands Component', () => {
     const store = createStore(manageBand)
     sinon.stub(store, 'getState').returns({
       bands: [
-        { id: 1, text: 'The Legendary Pink Dots' },
-        { id: 2, text: 'The Castanets' },
-        { id: 3, text: 'Cool Runnings' }
+        { id: 1, name: 'The Legendary Pink Dots' },
+        { id: 2, name: 'The Castanets' },
+        { id: 3, name: 'Cool Runnings' }
       ]
     });
 
