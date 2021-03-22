@@ -7,7 +7,7 @@ class Bands extends Component {
     console.log('this.props in Bands:', this.props);
 
     const bands = this.props.bands.map((band, index) => {
-      return <Band text={band.name} key={index} />
+      return <Band name={band.name} key={index} />
     });
 
     return(
