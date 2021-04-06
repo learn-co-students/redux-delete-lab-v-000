@@ -46,11 +46,11 @@ describe('Band Component', () => {
     expect(wrapper.text()).to.contain('Gwar');
   });
 
-  it('renders an li', () => {
-    const band = { id: 1, name: 'Momus' };
-    const wrapper = shallow(<Band band={band} />);
-    expect(wrapper.find('li')).to.have.length(1);
-  });
+  // it('renders an li', () => {
+  //   const band = { id: 1, name: 'Momus' };
+  //   const wrapper = shallow(<Band band={band} />);
+  //   expect(wrapper.find('li')).to.have.length(1);
+  // });
 });
 
 describe('Redux', () => {
