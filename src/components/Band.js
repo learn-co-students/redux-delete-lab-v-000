@@ -10,9 +10,9 @@ class Band extends Component {
   render() {
     return(
       <div>
-       <li>{this.props.name}</li>
+       <li>{this.props.name}{"    "}
        <button onClick={this.handleOnClick}>
-         Delete</button>
+         Delete</button></li>
       </div>
     );
   }
