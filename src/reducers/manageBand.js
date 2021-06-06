@@ -10,7 +10,7 @@ export default function manageBand(state = {
         id: uuid(),
         name: action.name
       }
-
+      
       return { ...state, bands: [...state.bands, band] }
 
     case 'DELETE_BAND':
