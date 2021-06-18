@@ -4,9 +4,9 @@ class Band extends Component {
 
   render() {
     return(
-      <div>
-        Band Component
-      </div>
+      <React.Fragment>
+        <li>{this.props.band.name}<button onClick={() => this.props.deleteBand(this.props.band.id)}>DELETE</button></li>
+      </React.Fragment>
     );
   }
 };
