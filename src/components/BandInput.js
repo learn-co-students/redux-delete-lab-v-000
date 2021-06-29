@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class BandInput extends Component {
 
   state = {
-    bandName: ''
+    bandName: '',
   }
 
   handleOnChange(event) {
@@ -15,6 +15,7 @@ class BandInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.addBand(this.state.bandName);
+
     this.setState({
       bandName: '',
     });
@@ -32,7 +33,7 @@ class BandInput extends Component {
         </form>
       </div>
     );
-  }
+  } 
 };
 
 export default BandInput;
